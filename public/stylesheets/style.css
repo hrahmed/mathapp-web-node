@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#logo{
+  text-align: center
+}
+
+#wrapper {
+  width: 450px margin : 0 auto padding : 40 px 20 px background : #fff
+}
+
+
+#display {
+  margin: 20px 0 50px
+}
+
+#footer {
+  margin-bottom: 10px
+}

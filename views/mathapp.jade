@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  #wrapper
+    #logo
+      img(src='/images/pi.jpg' width=50 height=50)
+      img(src='/images/nodejs.png' width=100 height=50)
+      h1=title
+    br
+    br
+    
+    H2 Simple Math
+
+    #display
+      form#formSimpleMath(name="simplemath",method="post",action="/mathapp/simplemath")
+        
+        select#selectOperation(name="operation")
+          option add
+          option subtract
+          option divide
+          option multiply
+          option error
+          option stall
+        br
+        br
+        | Value1:
+        input#inputValue1(type="text", placeholder="value1", name="value1")
+        br
+        | Value2:
+        input#inputValue2(type="text", placeholder="value2", name="value2")
+        br
+        br
+        button#btnSubmit(type="submit") submit
+        
+        
+
