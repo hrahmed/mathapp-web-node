@@ -14,18 +14,15 @@ module.exports = {
         arguments[0]);
 
         // Simple Math URL
-        var result = client.get("http://localhost:8080/MathProxy/rest/hello/math?operation=" +
-            arguments[0] +
-            "&value1=" +
-            arguments[1] +
-            "&value2=" +
-            arguments[2],
-            function(data, response){
-                //responseData = data;
-                //callback(responseData);
-                console.log("*** Result is: " + data.result);
-                callback(data.result);
-            });
+        var result = client.get("http://localhost:8080/MathProxy/rest/hello/math?operation=" + arguments[0] +
+                                        "&value1=" + arguments[1] + "&value2=" + arguments[2],
+                                function(data, response){
+                                //responseData = data;
+                                //callback(responseData);
+                                console.log("*** Result is: " + data.result);
+                                callback(data.result);
+                                }
+        );
         console.log("*** Result outside is: " + result);
         //return result;
     },

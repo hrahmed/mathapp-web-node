@@ -1,8 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  p Math Operation is #{operation}
-  p values are: #{value1} and #{value2}
-  p final result is: #{result}
+    #wrapper
+        #logo
+            img(src='/images/pi.jpg' width=50 height=50)
+            img(src='/images/nodejs.png' width=100 height=50)
+            h1=title
+        br
+        br
+
+        #display
+            p Welcome to #{title}
+            p Math Operation is #{operation}
+            p values are: #{value1} and #{value2}
+            p final result is: #{result}
