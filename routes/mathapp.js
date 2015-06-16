@@ -18,19 +18,22 @@ router.post('/simplemath', function(req, res) {
   var operation = req.body.operation;
   var value1 = req.body.value1;
   var value2 = req.body.value2;
-  config.getProperties();
-    
-  // asynch function call
-  simplmath.add(operation, value1, value2, function (result){
-          console.log("*** in callback for add result is: ");
-          res.render('simplemath', {title: 'Simple Math', operation: operation, value1: value1, value2: value2, result: result});
-      }
-  );
+  //config.getProperties();
 
+  config.getProperties(function(configObj){
+      console.log("***host is: " + configObj.host);
+      console.log("***port is: " + configObj.port);
+    
+      // asynch function call
+      simplmath.add(operation, value1, value2, configObj, function (result){
+              console.log("*** in callback for add result is: ");
+              res.render('simplemath', {title: 'Simple Math', operation: operation, value1: value1, value2: value2, result: result});
+          });
+    });
 });
 
 /* Get complex page */
-router.post('/complexmath', function(req, res) {
+/*router.post('/complexmath', function(req, res) {
     // Get our form values. These rely on the "name" attributes
     var operation = req.body.operation;
     var value1 = req.body.value1;
@@ -43,6 +46,6 @@ router.post('/complexmath', function(req, res) {
             res.render('simplemath', {title: 'Simple Math', operation: operation, value1: value1, value2: value2, result: result});
         }
     );
-});
+});*/
 
 module.exports = router;
