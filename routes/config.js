@@ -17,8 +17,8 @@ module.exports = {
         fs.readFile('./config.json', 'utf8', function (err, data) {
             if (err) throw err;
             obj = JSON.parse(data);
-            console.log("*** host is: " + obj.host);
-            console.log("*** port is: " + obj.port);
+            //console.log("*** host is: " + obj.host);
+            //console.log("*** port is: " + obj.port);
             cb(obj);
         });
 

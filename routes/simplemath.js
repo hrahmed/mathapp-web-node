@@ -8,7 +8,7 @@ client = new Client();
 var responseData  = {};
 
 module.exports = {
-    add: function (operation, value1, value2,configObj, callback) {
+    process: function (operation, value1, value2, configObj, callback) {
         
         var url = "http://" + configObj.host +":" + configObj.port +"/MathProxy/rest/hello/math?operation=" + operation +
             "&value1=" + value1 + "&value2=" + value2;
@@ -21,9 +21,9 @@ module.exports = {
                                 callback(data.result);
                                 });
     },
-    subtract: function () {
+    test: function () {
         // whatever
-        console.log("*** in subtract function");
+        console.log("*** in test function");
 
     }
 };
